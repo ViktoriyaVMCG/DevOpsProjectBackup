@@ -1,0 +1,6 @@
+---
+- name: Configure Bastion Server
+  hosts: jump
+  become: true
+  roles:
+    - jump
