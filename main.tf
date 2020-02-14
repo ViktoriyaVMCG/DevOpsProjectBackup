@@ -1,11 +1,16 @@
 provider "aws" {
   region  = var.region
-  profile = var.profile                                                                                                                                                   version = "~> 2.8"
-}                                                                                                                                                                                                                                                                                                                                               #-----Default VPC
+  profile = var.profile
+  version = "~> 2.8"
+}
+
+#-----Default VPC
 data "http" "myip" {
    url = "http://ipv4.icanhazip.com"
 }                                                                                                                                                                       
-                                                                                                                                                                        ##----------------Creating SSH Keys                                                                                                                                     ##----SSH Keys
+
+##----------------Creating SSH Keys                                                                                                                                     
+##----SSH Keys
 #resource "tls_private_key" "key_pair" {
 #  rsa_bits  = 4096
 #  algorithm = "RSA"
@@ -204,7 +209,7 @@ ssh_args = -C -F ./ssh.cfg
 ControlMaster = auto
 ControlPersist = 30m
 control_path = ./ansible/ansible-%%r@%%h:%%p
-                                             EOF
+EOF
     filename = "./ansible.cfg"
 }
 
