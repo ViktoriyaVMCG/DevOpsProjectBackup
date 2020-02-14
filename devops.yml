@@ -1,0 +1,7 @@
+---
+- name: Configure Web App Server
+  gather_facts: no
+  hosts: devops
+  become: true
+  roles:
+    - httpd
