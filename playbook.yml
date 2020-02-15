@@ -1,0 +1,20 @@
+---
+- name: Configure Bastion Server
+  hosts: jump
+  become: true
+  roles:
+        -jump
+
+- name: Configure Jenkins Server
+  hosts: jenkins
+  become: yes
+  roles:
+        -java
+        -jenkins
+
+- name: Configure Web App Server
+  gather_facts: no
+  hosts: devops
+  become: true
+  roles:
+        -httpd
