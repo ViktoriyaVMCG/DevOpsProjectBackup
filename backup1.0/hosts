@@ -1,0 +1,9 @@
+[jump]
+34.238.150.8 ansible_user=ec2-user
+
+[jenkins]
+172.31.32.234 ansible_user=ec2-user
+
+[devops]
+172.31.46.169 ansible_user=ec2-user
+172.31.39.223 ansible_user=ec2-user
